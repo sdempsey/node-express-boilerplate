@@ -1,4 +1,4 @@
-# Sean's simple as hell app boilerplate
+# Legit App Boilerplate
 
 For real, nothing special
 
