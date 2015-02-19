@@ -1,8 +1,11 @@
 var express = require('express'),
+    compression = require('compression');
     path = require('path'),
     fs = require('fs'),
     request = require('request'),
     app = express();
+
+app.use(compression({level: 9}));
 
 app.set('view cache', false);
 
