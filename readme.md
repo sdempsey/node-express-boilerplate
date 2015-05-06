@@ -1,10 +1,7 @@
-# Legit App Boilerplate
-
-For real, nothing special
+# Node Express Boilerplate
 
 ## Features
 
-* Seriously?  Get outa here.
-* Not really, This is just something fun for me.
-* Don't go, wait!
-* Byeeeeeeeee
+* Grunt Workflow
+* Express Web Server w/compression 
+* Sass
