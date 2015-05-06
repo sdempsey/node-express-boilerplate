@@ -1,5 +1,4 @@
-var os = require("os"),
-	timer = require("grunt-timer");
+var	timer = require("grunt-timer");
 
 module.exports = function(grunt) {
 	timer.init(grunt, {deferLogs: true, friendlyTime: true});
@@ -71,7 +70,7 @@ module.exports = function(grunt) {
 				dest: 'public/fonts',
 				destCss: 'public/sass',
 				options: {
-					engine: 'node',
+					engine: 'fontforge',
 					font: 'fontcustom',
 					hashes: false,
 					stylesheet: 'scss',
@@ -95,7 +94,7 @@ module.exports = function(grunt) {
         		}
       		}
     	},
-	    clean: ["public/**/tmp"],
+	    clean: ["public/**/tmp", "public/**/*.map"],
 		watch: {      
       		options: { livereload: true },
   			scripts: {
@@ -119,7 +118,8 @@ module.exports = function(grunt) {
 
 	require("load-grunt-tasks")(grunt);
 	grunt.registerTask('js', ['jshint', 'concat', 'uglify', 'clean']);
-	grunt.registerTask('css', ['sass', 'autoprefixer', 'cmq', 'clean']);
+	grunt.registerTask('css', ['sass', 'autoprefixer', 'clean']);
+	grunt.registerTask('deploy', ['img', 'js', 'sass', 'cmq', 'autoprefixer', 'clean']);
 	grunt.registerTask('img', ['newer:imagemin']);
 	grunt.registerTask("server", ["express", "watch"]);
 	grunt.registerTask('default', ['js', 'css', 'img']);
